@@ -1,19 +1,21 @@
-# Project Structure
+# Project Overview
 
-This project consists of multiple folders that organize the various components of the CNC Ink system. Below is an overview of the key directories and their purposes.
+This repository contains various components related to CNC Ink.
 
-## Operating Principles
+## Folders
 
-The CNC Ink system operates using a series of coordinated actions controlled by the provided code and schematics. This includes moving parts, managing ink delivery, and ensuring precise operation during printing tasks.
+### CAD
+Contains the CAD files used for the design.
 
-## CAD Folder
+### Schematics
+Includes the circuit schematics.
 
-The **CAD** folder contains the CAD models and drawings used for the design and assembly of the CNC machine. These files are essential for understanding the physical layout and structure of the machine.
+### Code
+Houses the source code for the CNC Ink application.
 
-## Schematics Folder
+### COMSOL
+The COMSOL folder includes simulation files related to the project. These simulations provide insights into the physical processes modeled within the CNC Ink system.
 
-The **Schematics** folder houses the electrical schematics that detail the connections and components of the CNC Ink system. These diagrams are crucial for anyone looking to build or troubleshoot the machine.
+---
 
-## Code Folder
-
-The **Code** folder contains the program code that controls the CNC machine's operations. It includes the algorithms for movement, ink application, and interactions with the hardware components.
+**Note:** Make sure to update your local copy with the latest changes.
