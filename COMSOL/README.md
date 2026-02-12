@@ -1,8 +1,21 @@
 ## Objective
-The objective of this project is to...
+
+<img width="494" height="298" alt="image" src="https://github.com/user-attachments/assets/005b5d04-5c58-45b6-bfe2-450c67360820" />
+
 
 ## COMSOL Multiphysics Setup
 ### Parameters
+
+The following list constitutes the entirety of the used parameters in the COMSOL simulation, which is formatted as:
+
+- Name: Assigned name to the variable
+- Expression: Value of the variable
+- Description: What the value is referencing
+- Source: Where the value was derived from
+
+The justification for the values that need it can be found in their respective section.
+
+
 | Name                    | Expression   | Description                      | Source         |
 |-------------------------|--------------|----------------------------------|----------------|
 | W_chamber               |   117 um     | Width of the chamber             |                |
@@ -13,7 +26,7 @@ The objective of this project is to...
 | H_nozzle                |   67  um     | Height of the nozzle             |                |
 | D_nozzle_b              |   83  um     | Bottom diameter of the nozzle    |                |
 | D_nozzle_t              |   50  um     | Top diameter of the nozzle       |                |
-| Angle_nozzle            |   atan(((D_nozzle_b-D_nozzle_t)*0.5)/H_nozzle)     | Angle of the nozzle              |                |
+| Angle_nozzle            |   atan(((D_nozzle_b-D_nozzle_t)*0.5)/H_nozzle)     | Angle of the nozzle |                |
 | H_air                   |   1500 um    | Height of the air column         |                |
 | R_air                   |     60 um    | Radius of the air column         |                |
 | rho_ag                  | 1427 kg/m^3  | Density of the agent             |                |
@@ -25,8 +38,11 @@ The objective of this project is to...
 | Mesh_max_interface      |      5 um    | Maximum mesh size at interface   |                |
 | Mesh_min_interface      |      3 um    | Minimum mesh size at interface   |                |
 
+
+
 ### Piezoelectric Function
-...
+
+
 
 ### Geometry
 ...
