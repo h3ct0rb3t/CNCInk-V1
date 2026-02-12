@@ -3,27 +3,27 @@ The objective of this project is to...
 
 ## COMSOL Multiphysics Setup
 ### Parameters
-| Name                    | Expression   | Value | Description                      | Source         |
+| Name                    | Expression   | Description                      | Source         |
 |-------------------------|--------------|-------|----------------------------------|----------------|
-| W_chamber               |   117 um     |       | Width of the chamber             |                |
-| L_chamber               |   800 um     |       | Length of the chamber            |                |
-| H_chamber               |   117 um     |       | Height of the chamber            |                |
-| W_restrictor            |   40  um     |       | Width of the restrictor          |                |
-| L_restrictor            |   400 um     |       | Length of the restrictor         |                |
-| H_nozzle                |   67  um     |       | Height of the nozzle             |                |
-| D_nozzle_b              |   83  um     |       | Bottom diameter of the nozzle    |                |
-| D_nozzle_t              |   50  um     |       | Top diameter of the nozzle       |                |
-| Angle_nozzle            |   atan(((D_nozzle_b-D_nozzle_t)*0.5)/H_nozzle)     |       | Angle of the nozzle              |                |
-| H_air                   |              |       | Height of the air column         |                |
-| R_air                   |              |       | Radius of the air column         |                |
-| rho_ag                  |              |       | Density of the agent             |                |
-| mu_ag                   |              |       | Viscosity of the agent           |                |
-| sigma_surface_ag        |              |       | Surface tension of the agent     |                |
-| v_amp                   |              |       | Amplitude of the voltage         |                |
-| re_in                   |              |       | Reynolds number                  |                |
-| Int_thick               |              |       | Thickness of the interface       |                |
-| Mesh_max_interface      |              |       | Maximum mesh size at interface   |                |
-| Mesh_min_interface      |              |       | Minimum mesh size at interface   |                |
+| W_chamber               |   117 um     | Width of the chamber             |                |
+| L_chamber               |   800 um     | Length of the chamber            |                |
+| H_chamber               |   117 um     | Height of the chamber            |                |
+| W_restrictor            |   40  um     | Width of the restrictor          |                |
+| L_restrictor            |   400 um     | Length of the restrictor         |                |
+| H_nozzle                |   67  um     | Height of the nozzle             |                |
+| D_nozzle_b              |   83  um     | Bottom diameter of the nozzle    |                |
+| D_nozzle_t              |   50  um     | Top diameter of the nozzle       |                |
+| Angle_nozzle            |   atan(((D_nozzle_b-D_nozzle_t)*0.5)/H_nozzle)     | Angle of the nozzle              |                |
+| H_air                   |   1500 um    | Height of the air column         |                |
+| R_air                   |     60 um    | Radius of the air column         |                |
+| rho_ag                  | 1427 kg/m^3  | Density of the agent             |                |
+| mu_ag                   |  0.014 Pa*s  | Viscosity of the agent           |                |
+| sigma_surface_ag        |  0.03 N/m    | Surface tension of the agent     |                |
+| v_amp                   |   30 m/s     | Amplitude of the voltage         |                |
+| re_in                   |  2 m/s       | Reynolds number                  |                |
+| Int_thick               |1.5*Mesh_min_interface        | Thickness of the interface       |                |
+| Mesh_max_interface      |      5 um    | Maximum mesh size at interface   |                |
+| Mesh_min_interface      |      3 um    | Minimum mesh size at interface   |                |
 
 ### Piezoelectric Function
 ...
