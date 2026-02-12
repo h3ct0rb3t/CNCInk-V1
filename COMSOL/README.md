@@ -4,7 +4,7 @@ The objective of this project is to...
 ## COMSOL Multiphysics Setup
 ### Parameters
 | Name                    | Expression   | Description                      | Source         |
-|-------------------------|--------------|-------|----------------------------------|----------------|
+|-------------------------|--------------|----------------------------------|----------------|
 | W_chamber               |   117 um     | Width of the chamber             |                |
 | L_chamber               |   800 um     | Length of the chamber            |                |
 | H_chamber               |   117 um     | Height of the chamber            |                |
