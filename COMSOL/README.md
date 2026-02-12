@@ -1,6 +1,5 @@
 ## Objective
 
-<img width="494" height="298" alt="image" src="https://github.com/user-attachments/assets/005b5d04-5c58-45b6-bfe2-450c67360820" />
 
 
 ## COMSOL Multiphysics Setup
@@ -45,10 +44,25 @@ The justification for the values that need it can be found in their respective s
 
 
 ### Geometry
-...
+
+The geometry is composed of 5 main components:
+
+1. Chamber
+2. Restrictor
+3. Nozzle
+4. Air (fine mesh)
+5. Air (regular mesh)
+
+Height is in the Z-plane. The height of the restrictor is the same as the chamber. 
+
+<img width="331" height="304" alt="image" src="https://github.com/user-attachments/assets/95a86ad2-5021-4be3-bba2-794df2df5ba4" />
+
+<img width="489" height="295" alt="image" src="https://github.com/user-attachments/assets/68ddc01e-4d32-4984-918e-1cf6cc249499" />
+
 
 ### Materials
-...
+
+
 
 ### Physics
 ...
