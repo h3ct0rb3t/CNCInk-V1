@@ -5,15 +5,15 @@ The objective of this project is to...
 ### Parameters
 | Name                    | Expression   | Value | Description                      | Source         |
 |-------------------------|--------------|-------|----------------------------------|----------------|
-| W_chamber               |              |       | Width of the chamber             |                |
-| L_chamber               |              |       | Length of the chamber            |                |
-| H_chamber               |              |       | Height of the chamber            |                |
-| W_restrictor            |              |       | Width of the restrictor          |                |
-| L_restrictor            |              |       | Length of the restrictor         |                |
-| H_nozzle                |              |       | Height of the nozzle             |                |
-| D_nozzle_b              |              |       | Bottom diameter of the nozzle    |                |
-| D_nozzle_t              |              |       | Top diameter of the nozzle       |                |
-| Angle_nozzle            |              |       | Angle of the nozzle              |                |
+| W_chamber               |   117 um     |       | Width of the chamber             |                |
+| L_chamber               |   800 um     |       | Length of the chamber            |                |
+| H_chamber               |   117 um     |       | Height of the chamber            |                |
+| W_restrictor            |   40  um     |       | Width of the restrictor          |                |
+| L_restrictor            |   400 um     |       | Length of the restrictor         |                |
+| H_nozzle                |   67  um     |       | Height of the nozzle             |                |
+| D_nozzle_b              |   83  um     |       | Bottom diameter of the nozzle    |                |
+| D_nozzle_t              |   50  um     |       | Top diameter of the nozzle       |                |
+| Angle_nozzle            |   atan(((D_nozzle_b-D_nozzle_t)*0.5)/H_nozzle)     |       | Angle of the nozzle              |                |
 | H_air                   |              |       | Height of the air column         |                |
 | R_air                   |              |       | Radius of the air column         |                |
 | rho_ag                  |              |       | Density of the agent             |                |
