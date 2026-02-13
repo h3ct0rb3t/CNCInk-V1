@@ -62,7 +62,8 @@ The geometry is composed of 5 main components:
 Height is in the Z-plane. The height of the restrictor is the same as the chamber. The nozzle geometry itself is derived partially from the literautre (Xiao et. al, 2018), as XAAR does not
 disclose this information. Therefore, some of the parameters had to be calibrated to match expected behaviour from the technical datasheet, mainly droplet volume and speed, and are not meant to be taken as literal values representative of the XAAR 128 printhead. Those parameters are clearly labeled in the "Parameters" section as "Calibrated". 
 
-<img width="582" height="302" alt="image" src="https://github.com/user-attachments/assets/cb3f3574-12ea-45c9-926b-0112ac34ae35" />
+<img width="764" height="377" alt="image" src="https://github.com/user-attachments/assets/7bcb20ba-caa7-4c82-9216-7c823a74bc50" />
+
 
 <img width="489" height="295" alt="image" src="https://github.com/user-attachments/assets/68ddc01e-4d32-4984-918e-1cf6cc249499" />
 
