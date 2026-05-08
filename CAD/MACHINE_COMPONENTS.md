@@ -9,6 +9,8 @@ This document describes the main subsystems of the CNCInk V1 printing machine. E
 
 ## 1. XYZ Motion System
 
+<img width="666" height="677" alt="image" src="https://github.com/user-attachments/assets/f19f9036-b1f3-40af-b4be-7ca718bd03e4" />
+
 ### Bill of Materials
 
 | Item Name | Quantity | Sourcing Link | Notes |
@@ -32,6 +34,8 @@ Homing is performed using limit switches at the negative (home) position on each
 ---
 
 ## 2. Printhead Carriage Assembly
+
+<img width="611" height="571" alt="image" src="https://github.com/user-attachments/assets/740e0c14-3874-423f-b74c-df2ed9308329" />
 
 ### Bill of Materials
 
@@ -57,6 +61,9 @@ The carriage must be carefully balanced and aligned to the XYZ axes to ensure pe
 
 ## 3. 3PK Heated Bed
 
+<img width="847" height="661" alt="image" src="https://github.com/user-attachments/assets/ca3195e0-c04d-40d9-80d6-8693fb0fda4d" />
+
+
 ### Bill of Materials
 
 | Item Name | Quantity | Sourcing Link | Notes |
@@ -80,6 +87,9 @@ The insulation layer beneath the bed minimizes heat loss and improves energy eff
 ---
 
 ## 4. Peltier-Cooled Ink Reservoir
+
+<img width="462" height="662" alt="image" src="https://github.com/user-attachments/assets/4a764145-c166-4c8a-a009-c3c61e6f9d73" />
+
 
 ### Bill of Materials
 
@@ -105,6 +115,9 @@ The redundant Peltier modules provide cooling capacity margin and allow graceful
 ---
 
 ## 5. UV Curing Chamber
+
+<img width="927" height="712" alt="image" src="https://github.com/user-attachments/assets/a66976c9-33ab-4354-a1ea-acf72da07d54" />
+
 
 ### Bill of Materials
 
@@ -132,6 +145,11 @@ Exposure time and UV intensity are controlled via PWM dimming, allowing recipes 
 ---
 
 ## 6. Enclosure and Supports
+
+<img width="1143" height="772" alt="image" src="https://github.com/user-attachments/assets/f7e629ac-d2e4-4908-8b39-bb10883d477f" />
+
+<img width="1127" height="612" alt="image" src="https://github.com/user-attachments/assets/5967380e-c0ce-4087-bf13-459e2a17900e" />
+
 
 ### Bill of Materials
 
