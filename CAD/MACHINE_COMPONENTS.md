@@ -2,6 +2,8 @@
 
 This document describes the main subsystems of the CNCInk V1 printing machine. Each section includes a Bill of Materials (BOM) and a detailed explanation of the subsystem's function and design considerations.
 
+<img width="1020" height="752" alt="image" src="https://github.com/user-attachments/assets/f98a4257-f5cf-4d72-bd27-d030a2fd1ff7" />
+
 ---
 
 ## 1. XYZ Motion System
