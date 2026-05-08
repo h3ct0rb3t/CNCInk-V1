@@ -1,5 +1,8 @@
 # Project Overview
 
+<img width="1020" height="752" alt="image" src="https://github.com/user-attachments/assets/9f618cc1-ba6b-481c-a625-4cb8d3f88f25" />
+
+
 This repository contains various components related to CNC Ink.
 
 ## Folders
