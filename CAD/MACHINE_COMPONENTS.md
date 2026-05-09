@@ -25,9 +25,9 @@ This document describes the main subsystems of the CNCInk V1 printing machine. E
 
 ### Functional Overview
 
-The XYZ motion system provides three-axis positioning for precise placement of the print substrate relative to the printhead. This subsystem enables the machine to scan the printhead across the X and Y axes while the Z axis controls the gap between the substrate and printhead—a critical parameter for inkjet printing quality and nozzle-substrate interaction.
+The XYZ motion system provides three-axis positioning for precise placement of the print substrate relative to the printhead. This subsystem enables the machine to scan the printhead across the X and Y axes while the Z axis controls the gap between the substrate and printhead, a crucial parameter that will be explored in the next section.
 
-The system uses stepper motors with microstepping capability to achieve high positional accuracy (typically 0.01-0.05mm per step depending on mechanical reduction). The Z-axis is particularly important as it maintains consistent standoff distance, preventing nozzle strikes while ensuring adequate ink droplet velocity and placement accuracy. The linear rails provide smooth, repeatable motion with minimal backlash, which is essential for registration accuracy across multiple print passes.
+The system uses stepper motors with microstepping capability to achieve high positional accuracy, leveraging the ball-and-screw configuration. The Z-axis is particularly important as it maintains consistent standoff distance, preventing nozzle strikes while ensuring adequate ink droplet velocity and placement accuracy. The linear rails provide smooth, repeatable motion with minimal backlash, which is essential for registration accuracy across multiple print passes.
 
 Homing is performed using limit switches at the negative (home) position on each axis. The control firmware stores these positions as reference points and calculates all subsequent moves relative to this zero position.
 
@@ -51,11 +51,11 @@ Homing is performed using limit switches at the negative (home) position on each
 
 ### Functional Overview
 
-The printhead carriage is the primary positioning stage that holds the Xaar 128 inkjet printhead and moves it across the XY plane. The carriage mounts to the Z-axis for vertical positioning control. Precise alignment of the printhead is critical for achieving uniform dot placement and preventing nozzle damage.
+The printhead carriage holds the Xaar 128 at the required angle (~79° according to the datasheet) for optimal printing, routes the tubing that transports the ink, and holds a custom piezoelectric sensor that always maintains the required gap between printhead and substrate (1mm per the datasheet). 
 
 The Xaar 128 is a high-resolution 128-nozzle printer with nozzles spaced at 84 micrometers, allowing for high-density printing patterns. The carriage design isolates vibration from the motion system to prevent vibration-induced droplet placement errors. A damping accumulator smooths pressure pulses in the ink supply, while the pressure relief valve provides redundant overpressure protection to safeguard the printhead from pressure spikes.
 
-The carriage must be carefully balanced and aligned to the XYZ axes to ensure perpendicular print surfaces and consistent ink delivery across all nozzles. The thermal sensor allows real-time temperature monitoring, as printhead viscosity is temperature-dependent and affects drop formation.
+The custom piezoelectric sensor consists of a piezoelectric disc, a shouldered rod, and a casing. The rod's shoulder rests on the casing, so that a part of it sits outside of the casing and can be pushed inwards a distance of exactly 1mm, at which point the piezoelectric disk is flexed, its signal amplified, and the Z-axis stopped. This sensor is cheaper than off-the-shelf alternatives, and can be easily removed from the collision path and stored on the printhead carriage.  
 
 ---
 
@@ -78,11 +78,9 @@ The carriage must be carefully balanced and aligned to the XYZ axes to ensure pe
 
 ### Functional Overview
 
-The 3PK heated bed maintains substrate temperature, which is critical for controlling ink viscosity, surface wetting characteristics, and curing behavior post-printing. The "3PK" designation refers to three cartridge heaters providing redundancy and uniform thermal distribution across the bed surface.
+The 3-Point Kinematic heated bed, or 3PK heated bed, is a custom aluminum printing surface that follows a 3-point kinematic design in order to ensure smooth printing. Because the bed moves perpendicular to the Z-axis, proper construction and installation of the bed ensures its position never drifts overtime. Further, the marbles and springs ensure that thermal expansion and stress due to the heaters are spread evenly throughout the surface. For this reason, Z-axis callibration should happen after heating the bed at the target temperature.
 
-Temperature control is essential because most inks have viscosity specifications at a reference temperature (typically 25°C). By heating the substrate to an elevated temperature (typically 40-80°C depending on ink type), the system can optimize ink flow to nozzles, reduce nozzle clogging, and improve wetting on certain substrates. The thermal sensors provide feedback for a PID control loop that maintains setpoint temperature within ±2°C.
-
-The insulation layer beneath the bed minimizes heat loss and improves energy efficiency. The heated bed also serves as the XY motion stage, with the printhead carriage positioned above it. Care must be taken to ensure thermal stability—excessive temperature gradients can cause non-uniform expansion of the substrate, leading to registration errors.
+The heating itself is accomplished with a 25x25cm, 110V, 450W flexible heating pad. It is backed with a silicone sheet that functions as a thermal insulator, capable of withstanding repeated cycling at high temperatures while being cheap and easily accesible. The aluminum overside functions as the bed, and the underside functions as the support and coupler to the axis.
 
 ---
 
@@ -106,11 +104,11 @@ The insulation layer beneath the bed minimizes heat loss and improves energy eff
 
 ### Functional Overview
 
-The Peltier-cooled ink reservoir maintains ink at a precisely controlled low temperature (typically 15-20°C) to preserve ink chemistry, prevent evaporation, and stabilize viscosity. This is particularly important for long print sessions where ambient temperature fluctuations could otherwise cause drift in drop formation characteristics.
+The Peltier-cooled ink reservoir maintains ink at a precisely controlled low temperature (typically 15-20°C) to preserve ink chemistry, prevent evaporation, and stabilize viscosity. This is particularly important for long print sessions where ambient temperature fluctuations could otherwise cause drift in drop formation characteristics. Ink itself is stored in a Falcon tube, which itself is held in a custom aluminum casing with a slit, so ink levels can be monitored, and a bore, for the temperature sensor. The Peltier module is backed by a heat sink and a fan, which help the precise regulation of ink temperature. 
 
-The Peltier thermoelectric cooler (TEC) operates by pumping heat from the cold side (in contact with the reservoir) to the hot side (dissipated to ambient via a heatsink and fan). A dual-sensor temperature monitoring system allows for closed-loop control: one sensor monitors the ink temperature in the reservoir, while a second monitors the hot-side temperature to prevent thermal runaway or condensation on the cold side.
+Because conductive inks can be very expensive and sensitive to temperature changes, a dedicated PID controller is allocated just for this module, which can be directly controlled by the user and is isolated from the microcontroller. The temperature sensor itself is a PT100 RTD probe, which is both cheap to acquire and extremely precise.
 
-The redundant Peltier modules provide cooling capacity margin and allow graceful degradation—if one module fails, the system continues to function at reduced cooling capacity. The in-line filter removes particles that could clog printhead nozzles. Insulated tubing on supply lines minimizes parasitic heat transfer between the cool reservoir and the warm heated bed system.
+Average laboratory conditions (25°C, 50% RH) give a dew point of ~13°C. While conductive inks are usually meant to be stored at temperatures much lower than this point (typically ~5°C), they usually have to be printed closer to room temperature. Therefore, condensation on the Peltier module should not be an issue in most applications, but the researcher is encouraged to keep this in mind for their own setup, as there's no filtration within the machine for condensation. 
 
 ---
 
@@ -134,13 +132,8 @@ The redundant Peltier modules provide cooling capacity margin and allow graceful
 
 ### Functional Overview
 
-The UV curing chamber enables post-print curing of UV-curable inks, which are essential for achieving fast ink cross-linking and high color saturation on many substrates. The chamber uses 365nm UV LEDs rather than mercury lamps, providing safer operation, lower power consumption, and longer service life.
+The UV curing chamber enables post-print curing of UV-curable inks, which are essential for achieving fast ink cross-linking and high color saturation on many substrates. The chamber uses a 395nm UV-A lamp, bolted to a 
 
-The reflective aluminum chamber design ensures efficient use of UV photons by bouncing scattered light back onto the substrate. Uniform curing across the entire print area is achieved through strategic positioning of four UV LED arrays around the chamber. The safety interlocks prevent accidental UV exposure to operators—the LEDs automatically disable when the chamber door or access cover is opened.
-
-Temperature control is important because UV curing is an exothermic chemical reaction; excessive heat buildup can cause substrate warping or ink over-cure (hardening so rapidly that the ink becomes brittle). The exhaust system removes ozone (a byproduct of UV-oxygen reactions) and volatile organic compounds that may be released during curing, maintaining a safe work environment.
-
-Exposure time and UV intensity are controlled via PWM dimming, allowing recipes to be optimized for different ink types and substrate thicknesses.
 
 ---
 
