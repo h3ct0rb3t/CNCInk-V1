@@ -86,7 +86,8 @@ The heating itself is accomplished with a 25x25cm, 110V, 450W flexible heating p
 
 ## 4. Peltier-Cooled Ink Reservoir
 
-<img width="462" height="662" alt="image" src="https://github.com/user-attachments/assets/4a764145-c166-4c8a-a009-c3c61e6f9d73" />
+<img width="503" height="615" alt="image" src="https://github.com/user-attachments/assets/b6c8e0ec-0edb-4746-afa6-13fcf8441e30" />
+
 
 
 ### Bill of Materials
@@ -132,7 +133,9 @@ Average laboratory conditions (25°C, 50% RH) give a dew point of ~13°C. While 
 
 ### Functional Overview
 
-The UV curing chamber enables post-print curing of UV-curable inks, which are essential for achieving fast ink cross-linking and high color saturation on many substrates. The chamber uses a 395nm UV-A lamp, bolted to a 
+The UV curing chamber enables post-print curing of UV-curable inks, which are essential for achieving fast ink cross-linking and high color saturation on many substrates. The chamber uses a 395nm UV-A lamp, bolted to an acrylic chamber rated for UV light, enabling the researcher to observe the samples inside without risk, even with no eyewear. 
+
+The UV lamp is connected to microcontroller, enabling multiple curing and printing sessions in a single run for the same substrate. 
 
 
 ---
@@ -159,11 +162,5 @@ The UV curing chamber enables post-print curing of UV-curable inks, which are es
 
 ### Functional Overview
 
-The enclosure and support structure serves multiple critical functions: it provides mechanical rigidity to maintain XYZ alignment tolerances, isolates the precision printing environment from external vibration, protects operators from moving machinery and UV exposure, and organizes the complex electrical and fluid systems required for printing.
 
-The aluminum extrusion frame provides an excellent balance of strength, stiffness, and modularity—components can be repositioned without structural modification. The polycarbonate panels are transparent, allowing observation of print operations while providing some acoustic damping. Hinged doors provide safe access to the printhead carriage for cleaning and maintenance without full disassembly.
-
-Vibration isolation feet decouple the machine from floor vibration, which is critical for achieving high positional accuracy. Even small vibrations during the dwell time before ink firing can cause droplet placement errors. The emergency stop button provides a single-action failsafe for rapid shutdown in case of any anomaly.
-
-Cable management is organized in trays to prevent interference with moving parts and to simplify troubleshooting. The fume extraction port connects to a house exhaust system, drawing vapors and ozone away from the operator during printing and curing operations. Proper ventilation is essential for operator safety and print quality (humidity control).
 
