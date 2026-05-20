@@ -22,3 +22,4 @@ The COMSOL folder includes simulation files related to the project. These simula
 ---
 
 **Note:** Make sure to update your local copy with the latest changes.
+Progress video update: https://youtu.be/DczCuBlnv0s
